@@ -9,7 +9,7 @@ const Read = () => {
     const [SingleUser, setSingleUser] = useState([])
     useEffect(() => {
       let FechSingleData = async () => {
-        let res = await axios.get(`http://localhost:2000/read/${id}`)
+        let res = await axios.get(`https://mern-crud-server-blond.vercel.app/read/${id}`)
         console.log(res);
         setSingleUser(res.data)
       }
