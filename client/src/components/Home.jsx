@@ -23,7 +23,7 @@ const Home = () => {
   let onsubmit = async (event)=>{
     event.preventDefault();
     console.log(inputUser);
-    let postData =await axios.post('http://localhost:2000/creteuser',inputUser)
+    let postData =await axios.post('https://mern-crud-server-blond.vercel.app/creteuser',inputUser)
     window.location.reload()
   }
 
@@ -32,7 +32,7 @@ const Home = () => {
   const [UserAllData, setUserAllData] = useState([])
   useEffect(() => {
     let FechAllData = async () => {
-      let res = await axios.get('http://localhost:2000/readuser')
+      let res = await axios.get('https://mern-crud-server-blond.vercel.app/readuser')
       console.log(res);
       setUserAllData(res.data)
     }
@@ -44,7 +44,7 @@ const Home = () => {
       // delete method
 
   let handleDelete=async (id)=>{
-    let delteData =await axios.delete(`http://localhost:2000/delete/${id}`)
+    let delteData =await axios.delete(`https://mern-crud-server-blond.vercel.app/delete/${id}`)
     window.location.reload()
   }
 
@@ -137,59 +137,7 @@ const Home = () => {
           </thead>
           <tbody>
 
-            {/* {
-              UserAllData.map((item ,i)=>{
-              <>
-                <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {i+1}
-                </th>
-                
-
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    {item.name}
-                </th>
-
-
-
-                <td className="px-6 py-4">{item.email} </td>
-                <td className="px-6 py-4">{item.password} </td>
-                <td className="px-6 py-4">
-         
-                  <div className="flex gap-x-4 justify-center">
-  
-  
-  
-                    <Link
-                      className="font-medium text-green-600 dark:text-blue-500 hover:underline">
-                      Read
-                    </Link>
-  
-  
-  
-  
-                    <Link
-                      className="font-medium text-yellow-400 dark:text-blue-500 hover:underline">
-                      Edit
-                    </Link>
-  
-  
-  
-  
-                    <button className="font-medium text-red-500  hover:underline">Delete</button>
-  
-  
-                  </div>
-                </td>
-              </tr>
-              
-              </>
-              })
-            } */}
+        
 
 
 
