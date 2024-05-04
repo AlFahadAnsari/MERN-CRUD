@@ -7,6 +7,7 @@ const cors =require('cors')
 app.use(cors())
 app.use(express.json())
 
+
 mongoose.connect('mongodb+srv://ansari:alfahad@crudweb.ntqpcyj.mongodb.net/MERN_CRUD')
 .then(()=>{
     console.log('mongoDb is connected');
